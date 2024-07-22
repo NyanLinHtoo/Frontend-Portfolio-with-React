@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 interface NavItemProps {
   text: string;
@@ -6,7 +6,7 @@ interface NavItemProps {
   onClick: () => void;
 }
 
-const NavItem: React.FC<NavItemProps> = ({ text, isActive, onClick }) => (
+const NavItem = ({ text, isActive, onClick }: NavItemProps) => (
   <li
     className={`px-4 py-2 hover:cursor-pointer relative group transition-colors duration-300 ${
       isActive
@@ -24,7 +24,7 @@ const NavItem: React.FC<NavItemProps> = ({ text, isActive, onClick }) => (
   </li>
 );
 
-const Navbar: React.FC = () => {
+const Navbar = () => {
   const [activeItem, setActiveItem] = useState("Home");
   const [isDarkMode, setIsDarkMode] = useState(false);
   const navItems: string[] = [

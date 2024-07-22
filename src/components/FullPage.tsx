@@ -14,7 +14,7 @@ const FullPage = () => {
       <Header />
       <AboutMe />
       {/* <Educations /> */}
-      {/* <Skills /> */}
+      <Skills />
       {/* <Projects /> */}
       {/* <ContactMe /> */}
       {/* <Footer /> */}
