@@ -1,6 +1,10 @@
-const AboutMe = () => {
+import { Props } from "./FullPage";
+
+const AboutMe = ({ id }: Props) => {
   return (
-    <div className="bg-gray-100 dark:bg-gray-900 py-16 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
+    <div
+      id={id}
+      className="bg-gray-100 dark:bg-gray-900 py-16 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white text-center mb-8">
           About Me
@@ -32,10 +36,11 @@ const AboutMe = () => {
                 <span className="font-semibold text-purple-600 dark:text-purple-400">
                   Mr. Nyan Lin Htoo
                 </span>
-                , a passionate frontend developer with over a year and a half of
-                experience. My journey in web development has equipped me with a
-                strong foundation in both front-end and back-end technologies,
-                with a primary focus on crafting exceptional user interfaces.
+                , a passionate frontend developer with over a year and 4 months
+                of experience. My journey in web development has equipped me
+                with a strong foundation in both front-end and back-end
+                technologies, with a primary focus on crafting exceptional user
+                interfaces.
               </p>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
                 My dedication to excellence and continuous learning has been

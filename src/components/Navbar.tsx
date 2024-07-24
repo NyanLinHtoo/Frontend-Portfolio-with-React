@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface NavItemProps {
   text: string;
@@ -27,19 +27,48 @@ const NavItem = ({ text, isActive, onClick }: NavItemProps) => (
 const Navbar = () => {
   const [activeItem, setActiveItem] = useState("Home");
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const navItems: string[] = [
-    "Home",
-    "About me",
-    "Education",
-    "Skills",
-    "Projects",
-    "Contact",
+  const navItems: { text: string; href: string }[] = [
+    { text: "Home", href: "home" },
+    { text: "About me", href: "about" },
+    { text: "Skills", href: "skills" },
+    { text: "Projects", href: "projects" },
+    { text: "Contact", href: "contact" },
   ];
 
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
     document.documentElement.classList.toggle("dark");
   };
+
+  const scrollToSection = (href: string) => {
+    const element = document.getElementById(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const sections = navItems.map((item) =>
+        document.getElementById(item.href)
+      );
+
+      sections.forEach((section, index) => {
+        if (section) {
+          const sectionTop = section.offsetTop;
+          const sectionBottom = sectionTop + section.offsetHeight;
+
+          if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+            setActiveItem(navItems[index].text);
+          }
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <nav className="bg-white dark:bg-black shadow-md transition-colors duration-300">
@@ -52,10 +81,13 @@ const Navbar = () => {
           <ul className="flex space-x-1 items-center">
             {navItems.map((item) => (
               <NavItem
-                key={item}
-                text={item}
-                isActive={activeItem === item}
-                onClick={() => setActiveItem(item)}
+                key={item.text}
+                text={item.text}
+                isActive={activeItem === item.text}
+                onClick={() => {
+                  setActiveItem(item.text);
+                  scrollToSection(item.href);
+                }}
               />
             ))}
             <li>

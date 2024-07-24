@@ -1,0 +1,30 @@
+.custom-form .ant-form-item-required::before {
+  display: none !important;
+}
+
+@keyframes wobble-bottom {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(4px) rotate(2deg);
+  }
+  50% {
+    transform: translateY(-2px) rotate(-1deg);
+  }
+  75% {
+    transform: translateY(2px) rotate(1deg);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.icon-wobble:hover {
+  animation: wobble-bottom 0.6s ease-in-out;
+  animation-iteration-count: 1;
+}
+
+* {
+  cursor: none !important;
+}
