@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import AboutMe from "./AboutMe";
-import ContactMe from "./ContactMe";
-import Header from "./Header";
 import Navbar from "./Navbar";
+import Header from "./Header";
+import AboutMe from "./AboutMe";
 import Skills from "./Skills";
+import Projects from "./Projects";
+import ContactMe from "./ContactMe";
 // import { FloatButton } from "antd";
 import CursorFollower from "./CursorFollower";
 import "./styles.css";
@@ -52,6 +53,7 @@ const FullPage = () => {
           )}
           {activeSection === "about" && <AboutMe id="about" />}
           {activeSection === "skills" && <Skills id="skills" />}
+          {activeSection === "projects" && <Projects id="projects" />}
           {activeSection === "contact" && <ContactMe id="contact" />}
         </motion.div>
       </AnimatePresence>
