@@ -16,7 +16,7 @@ const CursorFollower: React.FC = () => {
 
     // Select all interactive elements
     const interactiveElements = document.querySelectorAll(
-      "a, button, input, textarea, select, li, img "
+      "a, button, input, textarea, select, li, img, span "
     );
     interactiveElements.forEach((el) => {
       el.addEventListener("mouseenter", handleMouseEnter);

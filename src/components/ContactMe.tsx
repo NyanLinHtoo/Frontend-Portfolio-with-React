@@ -25,9 +25,9 @@ const ContactMe = ({ id }: Props) => {
   return (
     <div
       id={id}
-      className="h-screen bg-gray-100 dark:bg-gray-900 transition-colors duration-300 flex flex-col">
-      <div className="flex-grow overflow-auto py-10 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto">
+      className="min-h-screen bg-gray-100 dark:bg-gray-900 transition-colors duration-300 flex flex-col">
+      <div className="flex-grow flex items-center justify-center py-10 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl w-full">
           <div className="flex flex-col lg:flex-row items-start space-y-12 lg:space-y-0 lg:space-x-16">
             <div className="w-full lg:w-2/5">
               <Title

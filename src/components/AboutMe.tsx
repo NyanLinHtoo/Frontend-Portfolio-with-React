@@ -13,7 +13,7 @@ const AboutMe = ({ id }: Props) => {
           <div className="w-full lg:w-1/3">
             <div className="relative rounded-lg overflow-hidden shadow-xl transform transition duration-500 hover:scale-105">
               <img
-                src="./images/NLH.jpg"
+                src="./images/download.jpg"
                 alt="Nyan Lin Htoo"
                 className="w-full h-auto object-cover"
               />

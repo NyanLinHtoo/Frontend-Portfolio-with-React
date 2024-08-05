@@ -5,7 +5,7 @@ import ContactMe from "./ContactMe";
 import Header from "./Header";
 import Navbar from "./Navbar";
 import Skills from "./Skills";
-import { FloatButton } from "antd";
+// import { FloatButton } from "antd";
 import CursorFollower from "./CursorFollower";
 import "./styles.css";
 
@@ -28,10 +28,17 @@ const FullPage = () => {
     duration: 0.5,
   };
 
+  const handleExploreClick = () => {
+    setActiveSection("projects");
+  };
+
   return (
     <div className="cursor-none">
       <CursorFollower />
-      <Navbar setActiveSection={setActiveSection} />
+      <Navbar
+        setActiveSection={setActiveSection}
+        activeSection={activeSection}
+      />
       <AnimatePresence mode="wait">
         <motion.div
           key={activeSection}
@@ -40,13 +47,15 @@ const FullPage = () => {
           exit="out"
           variants={pageVariants}
           transition={pageTransition}>
-          {activeSection === "home" && <Header id="home" />}
+          {activeSection === "home" && (
+            <Header id="home" onExploreClick={handleExploreClick} />
+          )}
           {activeSection === "about" && <AboutMe id="about" />}
           {activeSection === "skills" && <Skills id="skills" />}
           {activeSection === "contact" && <ContactMe id="contact" />}
         </motion.div>
       </AnimatePresence>
-      <FloatButton.BackTop tooltip={<div>Back to top</div>} />
+      {/* <FloatButton.BackTop tooltip={<div>Back to top</div>} /> */}
     </div>
   );
 };

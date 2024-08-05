@@ -1,7 +1,11 @@
 import { TypeAnimation } from "react-type-animation";
 import { Props } from "./FullPage";
 
-const Header = ({ id }: Props) => {
+interface HeaderProps extends Props {
+  onExploreClick: () => void;
+}
+
+const Header = ({ id, onExploreClick }: HeaderProps) => {
   return (
     <div
       id={id}
@@ -26,7 +30,9 @@ const Header = ({ id }: Props) => {
             cursor={true}
           />
         </div>
-        <button className="px-6 py-3 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition duration-300 transform hover:scale-105 dark:bg-purple-500 dark:hover:bg-purple-600 ">
+        <button
+          className="px-6 py-3 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition duration-300 transform hover:scale-105 dark:bg-purple-500 dark:hover:bg-purple-600"
+          onClick={onExploreClick}>
           Explore My Work
         </button>
       </div>

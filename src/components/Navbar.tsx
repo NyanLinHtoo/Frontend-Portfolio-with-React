@@ -26,10 +26,10 @@ const NavItem = ({ text, isActive, onClick }: NavItemProps) => (
 
 interface NavbarProps {
   setActiveSection: (section: string) => void;
+  activeSection: string;
 }
 
-const Navbar = ({ setActiveSection }: NavbarProps) => {
-  const [activeItem, setActiveItem] = useState("Home");
+const Navbar = ({ setActiveSection, activeSection }: NavbarProps) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const navItems: { text: string; href: string }[] = [
     { text: "Home", href: "home" },
@@ -44,36 +44,6 @@ const Navbar = ({ setActiveSection }: NavbarProps) => {
     document.documentElement.classList.toggle("dark");
   };
 
-  // const scrollToSection = (href: string) => {
-  //   const element = document.getElementById(href);
-  //   if (element) {
-  //     element.scrollIntoView({ behavior: "smooth" });
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const scrollPosition = window.scrollY;
-  //     const sections = navItems.map((item) =>
-  //       document.getElementById(item.href)
-  //     );
-
-  //     sections.forEach((section, index) => {
-  //       if (section) {
-  //         const sectionTop = section.offsetTop;
-  //         const sectionBottom = sectionTop + section.offsetHeight;
-
-  //         if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-  //           setActiveItem(navItems[index].text);
-  //         }
-  //       }
-  //     });
-  //   };
-
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, []);
-
   return (
     <nav className="bg-white dark:bg-black shadow-md transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -87,9 +57,8 @@ const Navbar = ({ setActiveSection }: NavbarProps) => {
               <NavItem
                 key={item.text}
                 text={item.text}
-                isActive={activeItem === item.text}
+                isActive={activeSection === item.href}
                 onClick={() => {
-                  setActiveItem(item.text);
                   setActiveSection(item.href);
                 }}
               />
