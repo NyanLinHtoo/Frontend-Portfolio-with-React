@@ -1,31 +1,29 @@
 import AboutMe from "./AboutMe";
 import ContactMe from "./ContactMe";
-import Educations from "./Educations";
-import Footer from "./Footer";
 import Header from "./Header";
 import Navbar from "./Navbar";
-import Projects from "./Projects";
+// import Projects from "./Projects";
 import Skills from "./Skills";
 import { FloatButton } from "antd";
 import CursorFollower from "./CursorFollower";
 import "./styles.css";
+import { useState } from "react";
 
 export interface Props {
   id: string;
 }
 
 const FullPage = () => {
+  const [activeSection, setActiveSection] = useState("home");
+
   return (
     <div className="cursor-none">
       <CursorFollower />
-      <Navbar />
-      <Header id="home" />
-      <AboutMe id="about" />
-      {/* <Educations /> */}
-      <Skills id="skills" />
-      {/* <Projects /> */}
-      <ContactMe id="contact" />
-      <Footer />
+      <Navbar setActiveSection={setActiveSection} />
+      {activeSection === "home" && <Header id="home" />}
+      {activeSection === "about" && <AboutMe id="about" />}
+      {activeSection === "skills" && <Skills id="skills" />}
+      {activeSection === "contact" && <ContactMe id="contact" />}
       <FloatButton.BackTop tooltip={<div>Back to top</div>} />
     </div>
   );

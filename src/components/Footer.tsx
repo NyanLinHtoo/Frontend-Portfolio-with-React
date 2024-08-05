@@ -3,7 +3,7 @@ import "./styles.css";
 
 const Footer = () => {
   return (
-    <footer className="bg-purple-200 dark:bg-gray-800 py-6 px-4">
+    <footer className="bg-purple-200 dark:bg-gray-800 py-6 px-4 flex-shrink-0">
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center">
         <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 sm:mb-0">
           If at first you don't succeed, call it version 1.0. © 2024 - Nyan Lin

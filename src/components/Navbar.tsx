@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 interface NavItemProps {
   text: string;
@@ -24,7 +24,11 @@ const NavItem = ({ text, isActive, onClick }: NavItemProps) => (
   </li>
 );
 
-const Navbar = () => {
+interface NavbarProps {
+  setActiveSection: (section: string) => void;
+}
+
+const Navbar = ({ setActiveSection }: NavbarProps) => {
   const [activeItem, setActiveItem] = useState("Home");
   const [isDarkMode, setIsDarkMode] = useState(false);
   const navItems: { text: string; href: string }[] = [
@@ -40,35 +44,35 @@ const Navbar = () => {
     document.documentElement.classList.toggle("dark");
   };
 
-  const scrollToSection = (href: string) => {
-    const element = document.getElementById(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  // const scrollToSection = (href: string) => {
+  //   const element = document.getElementById(href);
+  //   if (element) {
+  //     element.scrollIntoView({ behavior: "smooth" });
+  //   }
+  // };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const sections = navItems.map((item) =>
-        document.getElementById(item.href)
-      );
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const scrollPosition = window.scrollY;
+  //     const sections = navItems.map((item) =>
+  //       document.getElementById(item.href)
+  //     );
 
-      sections.forEach((section, index) => {
-        if (section) {
-          const sectionTop = section.offsetTop;
-          const sectionBottom = sectionTop + section.offsetHeight;
+  //     sections.forEach((section, index) => {
+  //       if (section) {
+  //         const sectionTop = section.offsetTop;
+  //         const sectionBottom = sectionTop + section.offsetHeight;
 
-          if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-            setActiveItem(navItems[index].text);
-          }
-        }
-      });
-    };
+  //         if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+  //           setActiveItem(navItems[index].text);
+  //         }
+  //       }
+  //     });
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
 
   return (
     <nav className="bg-white dark:bg-black shadow-md transition-colors duration-300">
@@ -86,7 +90,7 @@ const Navbar = () => {
                 isActive={activeItem === item.text}
                 onClick={() => {
                   setActiveItem(item.text);
-                  scrollToSection(item.href);
+                  setActiveSection(item.href);
                 }}
               />
             ))}

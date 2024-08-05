@@ -16,7 +16,7 @@ const CursorFollower: React.FC = () => {
 
     // Select all interactive elements
     const interactiveElements = document.querySelectorAll(
-      "a, button, input, textarea, select"
+      "a, button, input, textarea, select, li, img "
     );
     interactiveElements.forEach((el) => {
       el.addEventListener("mouseenter", handleMouseEnter);
@@ -38,12 +38,12 @@ const CursorFollower: React.FC = () => {
       style={{
         left: `${position.x}px`,
         top: `${position.y}px`,
-        transform: "translate(-50%, -50%)",
+        transform: "translate(-25%, -25%)",
       }}>
       {/* Outer circle */}
       <div
         className={`rounded-full opacity-50 transition-all duration-300 ease-out
-                    ${isHovering ? "bg-purple-400" : "bg-purple-500"}`}
+                    ${isHovering ? "bg-gray-400" : "bg-gray-500"}`}
         style={{
           width: isHovering ? "50px" : "32px",
           height: isHovering ? "50px" : "32px",
@@ -52,10 +52,10 @@ const CursorFollower: React.FC = () => {
 
       {/* Inner circle */}
       <div
-        className="bg-purple-600 rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ease-out"
+        className="bg-white rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ease-out"
         style={{
-          width: isHovering ? "4px" : "10px",
-          height: isHovering ? "4px" : "10px",
+          width: isHovering ? "6px" : "10px",
+          height: isHovering ? "6px" : "10px",
         }}></div>
     </div>
   );
