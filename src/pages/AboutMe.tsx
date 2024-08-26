@@ -1,4 +1,4 @@
-import { Props } from "./FullPage";
+import { Props } from "../components/FullPage";
 
 const AboutMe = ({ id }: Props) => {
   return (

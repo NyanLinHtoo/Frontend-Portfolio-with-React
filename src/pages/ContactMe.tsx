@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Button, Form, Input, Typography, message, Card } from "antd";
 import { MailOutlined, UserOutlined, SendOutlined } from "@ant-design/icons";
-import { Props } from "./FullPage";
-import Footer from "./Footer";
+import { Props } from "../components/FullPage";
+import Footer from "../components/Footer";
 
 const { Title, Paragraph } = Typography;
 const { TextArea } = Input;

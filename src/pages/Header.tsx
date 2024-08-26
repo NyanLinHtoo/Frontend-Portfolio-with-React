@@ -1,5 +1,5 @@
 import { TypeAnimation } from "react-type-animation";
-import { Props } from "./FullPage";
+import { Props } from "../components/FullPage";
 
 interface HeaderProps extends Props {
   onExploreClick: () => void;

@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "./Navbar";
-import Header from "./Header";
-import AboutMe from "./AboutMe";
-import Skills from "./Skills";
-import Projects from "./Projects";
-import ContactMe from "./ContactMe";
+import Header from "../pages/Header";
+import AboutMe from "../pages/AboutMe";
+import Skills from "../pages/Skills";
+import Projects from "../pages/Projects";
+import ContactMe from "../pages/ContactMe";
 // import { FloatButton } from "antd";
 import CursorFollower from "./CursorFollower";
 import "./styles.css";
