@@ -34,8 +34,8 @@ const FullPage = () => {
   };
 
   return (
-    <div className="cursor-none">
-      <CursorFollower />
+    <div>
+      {/* <CursorFollower /> */}
       <Navbar
         setActiveSection={setActiveSection}
         activeSection={activeSection}
