@@ -21,7 +21,6 @@ const columns: TableProps<DataType>["columns"] = [
     dataIndex: "development",
     key: "development",
   },
-
   {
     title: "Tags",
     key: "buildWith",
@@ -45,7 +44,7 @@ const columns: TableProps<DataType>["columns"] = [
     key: "link",
     render: (_, record) => (
       <Space size="middle">
-        <a>Invite {record.project}</a>
+        <a>{record.link}</a>
       </Space>
     ),
   },
@@ -54,10 +53,10 @@ const columns: TableProps<DataType>["columns"] = [
 const data: DataType[] = [
   {
     key: "1",
-    project: "John Brown",
-    development: "32",
-    buildWith: ["New York No. 1 Lake Park"],
-    link: "nice",
+    project: "Chat App",
+    development: "Full stack",
+    buildWith: ["React", "Node"],
+    link: "Blah Blah Blah",
   },
   {
     key: "2",
@@ -78,7 +77,12 @@ const data: DataType[] = [
 const ProjectTable = () => {
   return (
     <div className="bg-white rounded-lg shadow-md p-6">
-      <h3 className="text-3xl font-semibold mb-6">All Projects</h3>
+      <div className="mb-6">
+        <h3 className="text-3xl font-semibold mb-2">All Projects</h3>
+        <p className="text-lg">
+          I will keep updating these projects over time to show my progress.
+        </p>
+      </div>
       <Table
         columns={columns}
         dataSource={data}
