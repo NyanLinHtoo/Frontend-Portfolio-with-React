@@ -53,9 +53,9 @@ const columns: TableProps<DataType>["columns"] = [
 const data: DataType[] = [
   {
     key: "1",
-    project: "Chat App",
-    development: "Full stack",
-    buildWith: ["React", "Node"],
+    project: "Frontend Portfolio with React",
+    development: "Frontend",
+    buildWith: ["React", "TypeScript", "Tailwind Css", "Antd"],
     link: "Blah Blah Blah",
   },
   {
