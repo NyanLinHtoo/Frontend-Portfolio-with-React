@@ -2,7 +2,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Props } from "../components/FullPage";
 import { faLink, faLock } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import ProjectTable from "../components/ProjectTable";
+// import ProjectTable from "../components/ProjectTable";
+import { Image } from "antd";
 
 const Projects = ({ id }: Props) => {
   const projects = [
@@ -48,8 +49,8 @@ const Projects = ({ id }: Props) => {
       title: "Barber Shop",
       description:
         "Barber Shop is a website where you can easily book a haircut by email...",
-      image: "/images/barbershop.webp",
-      link: "https://mtm-task-management.vercel.app/login",
+      image: "/images/barbershop.jpg",
+      link: "https://barber-shop-six-henna.vercel.app/home",
       github: "https://github.com/NyanLinHtoo/BarberShop",
       techStack: [
         "React",
@@ -59,6 +60,85 @@ const Projects = ({ id }: Props) => {
         "Express.js",
         "Nodemailer",
         "FontAwesome",
+      ],
+    },
+    {
+      title: "React Calculator",
+      description:
+        "Barber Shop is a website where you can easily book a haircut by email...",
+      image: "/images/barbershop.webp",
+      link: "https://mtm-task-management.vercel.app/login",
+      github: "https://github.com/NyanLinHtoo/BarberShop",
+      techStack: ["React", "TypeScript", "Tailwind Css"],
+    },
+    {
+      title: "UMS Project",
+      description:
+        "Barber Shop is a website where you can easily book a haircut by email...",
+      image: "/images/barbershop.webp",
+      link: "https://mtm-task-management.vercel.app/login",
+      github: "https://github.com/NyanLinHtoo/BarberShop",
+      techStack: [
+        "React",
+        "TypeScript",
+        "Tailwind Css",
+        "Antd",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+      ],
+    },
+    {
+      title: "Library Management",
+      description:
+        "Barber Shop is a website where you can easily book a haircut by email...",
+      image: "/images/barbershop.webp",
+      link: "https://mtm-task-management.vercel.app/login",
+      github: "https://github.com/NyanLinHtoo/BarberShop",
+      techStack: ["React", "Sonner", "MUI", "Node.js", "Express.js", "MongoDB"],
+    },
+    {
+      title: "Stopwatch",
+      description:
+        "Barber Shop is a website where you can easily book a haircut by email...",
+      image: "/images/stopwatch.jpg",
+      link: "https://stopwatch-five-gilt.vercel.app/",
+      github: "https://github.com/NyanLinHtoo/BarberShop",
+      techStack: ["React", "TypeScript", "Tailwind Css"],
+    },
+    {
+      title: "Exam System",
+      description:
+        "Barber Shop is a website where you can easily book a haircut by email...",
+      image: "/images/barbershop.webp",
+      link: "https://mtm-task-management.vercel.app/login",
+      github: "https://github.com/NyanLinHtoo/BarberShop",
+      techStack: ["Angular", "TypeScript", "Sweet Alert 2", "Lodash", "Strapi"],
+    },
+    {
+      title: "Game Hub",
+      description:
+        "Barber Shop is a website where you can easily book a haircut by email...",
+      image: "/images/Gamehub.jpg",
+      link: "https://game-hub-with-react.vercel.app/",
+      github: "https://github.com/NyanLinHtoo/BarberShop",
+      techStack: ["React", "TypeScript", "Tailwind Css", "Sonner"],
+    },
+    {
+      title: "Tic Tac Toe",
+      description:
+        "Barber Shop is a website where you can easily book a haircut by email...",
+      image: "/images/barbershop.webp",
+      link: "https://mtm-task-management.vercel.app/login",
+      github: "https://github.com/NyanLinHtoo/BarberShop",
+      techStack: [
+        "React",
+        "TypeScript",
+        "Tailwind Css",
+        "Sonner",
+        "Socket.io",
+        "Node.js",
+        "Express.js",
       ],
     },
   ];
@@ -72,10 +152,12 @@ const Projects = ({ id }: Props) => {
             <div
               key={index}
               className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
-              <img
+              <Image
                 src={project.image}
                 alt={project.title}
-                className="w-full h-48 object-cover"
+                preview={{
+                  toolbarRender: () => null,
+                }}
               />
               <div className="p-6">
                 <h3 className="text-2xl font-semibold mb-2">{project.title}</h3>
@@ -110,14 +192,16 @@ const Projects = ({ id }: Props) => {
                   </div>
                 )}
                 <div className="flex justify-between items-center">
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-500 hover:text-blue-700 transition-colors duration-300">
-                    <FontAwesomeIcon icon={faLink} className="mr-2" shake />
-                    Demo
-                  </a>
+                  {project.link && (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-500 hover:text-blue-700 transition-colors duration-300">
+                      <FontAwesomeIcon icon={faLink} className="mr-2" shake />
+                      Demo
+                    </a>
+                  )}
                   <a
                     href={project.github}
                     target="_blank"
@@ -136,9 +220,9 @@ const Projects = ({ id }: Props) => {
           ))}
         </div>
       </div>
-      <div className="container mx-auto px-4 mt-16">
+      {/* <div className="container mx-auto px-4 mt-16">
         <ProjectTable />
-      </div>
+      </div> */}
     </div>
   );
 };
