@@ -31,10 +31,10 @@ const ProjectCard = ({
   onCredentialsClick,
 }: ProjectCardProps) => {
   return (
-    <div className="relative h-full">
+    <div className="relative h-full ">
       <div className="absolute -inset-0.5 bg-purple-300 rounded-2xl opacity-0 group-hover:opacity-75 transition duration-300 blur-sm group-hover:blur-md"></div>
       <Card
-        className="group transform transition-all duration-300 hover:shadow-2xl rounded-2xl border-transparent h-full"
+        className="group transform transition-all duration-300 hover:shadow-2xl rounded-2xl border-transparent h-full dark:bg-gray-800"
         cover={
           <div className="overflow-hidden rounded-t-2xl h-56 max-h-56">
             <Image
@@ -46,15 +46,15 @@ const ProjectCard = ({
         }>
         <div className="p-2 flex flex-col h-full">
           <div className="mb-4 flex-grow">
-            <h3 className="text-2xl font-bold text-gray-800 mb-2 truncate transition-colors group-hover:text-purple-600 h-8 overflow-hidden">
+            <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-2 truncate transition-colors group-hover:text-purple-600 h-8 overflow-hidden">
               {title}
             </h3>
-            <p className="text-gray-600 line-clamp-3 transition-colors group-hover:text-gray-800 h-20 overflow-hidden">
+            <p className="text-gray-600 dark:text-white line-clamp-3 transition-colors group-hover:text-gray-800 group-hover:dark:text-white h-20 overflow-hidden">
               {description}
             </p>
           </div>
           <div className="mb-6 flex-grow-0">
-            <h4 className="text-xl font-semibold mb-3 flex items-center">
+            <h4 className="text-xl dark:text-white font-semibold mb-3 flex items-center">
               <DatabaseOutlined className="mr-2 text-purple-600 transition-transform group-hover:rotate-12" />
               Tech Stack
             </h4>
@@ -91,7 +91,7 @@ const ProjectCard = ({
                 href={github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-700 hover:text-black transition-colors transform hover:scale-125">
+                className="text-gray-700 hover:text-black transition-colors transform hover:scale-125 dark:text-white">
                 <GithubOutlined className="text-xl" />
               </a>
             </div>

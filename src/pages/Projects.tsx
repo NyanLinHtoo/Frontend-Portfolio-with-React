@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { Modal, Timeline, message } from "antd";
-import { LinkOutlined } from "@ant-design/icons";
+import { Modal, Timeline } from "antd";
 import ProjectCard from "../components/ProjectCard";
 import { projectdemos } from "../utils/project";
 
@@ -15,8 +14,6 @@ interface Project {
     email: string;
     password: string;
   };
-  duration?: string;
-  category?: string;
 }
 
 const Projects = ({ id }: { id?: string }) => {
@@ -31,11 +28,11 @@ const Projects = ({ id }: { id?: string }) => {
 
   return (
     <>
-      <div id={id} className="bg-[#f0f2f5] min-h-screen py-16">
+      <div id={id} className="bg-[#f0f2f5] min-h-screen py-16 dark:bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-black text-gray-800 mb-4">
-              Project <span className="text-blue-600">Showcase</span>
+            <h2 className="text-5xl font-black text-gray-800 mb-4 dark:text-white">
+              Project <span className="text-purple-600">Showcase</span>
             </h2>
             <p className="text-gray-500 max-w-2xl mx-auto">
               A collection of innovative projects demonstrating my skills in web

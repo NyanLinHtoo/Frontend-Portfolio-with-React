@@ -34,7 +34,7 @@ const FullPage = () => {
 
   return (
     <div>
-      <CursorFollower />
+      {/* <CursorFollower /> */}
       <Navbar
         setActiveSection={setActiveSection}
         activeSection={activeSection}
