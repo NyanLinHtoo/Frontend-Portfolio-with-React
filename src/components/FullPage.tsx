@@ -5,7 +5,6 @@ import Header from "../pages/Header";
 import AboutMe from "../pages/AboutMe";
 import Skills from "../pages/Skills";
 import Projects from "../pages/Projects";
-import ContactMe from "../pages/ContactMe";
 // import { FloatButton } from "antd";
 import CursorFollower from "./CursorFollower";
 import "./styles.css";
@@ -35,7 +34,7 @@ const FullPage = () => {
 
   return (
     <div>
-      {/* <CursorFollower /> */}
+      <CursorFollower />
       <Navbar
         setActiveSection={setActiveSection}
         activeSection={activeSection}
@@ -54,7 +53,6 @@ const FullPage = () => {
           {activeSection === "about" && <AboutMe id="about" />}
           {activeSection === "skills" && <Skills id="skills" />}
           {activeSection === "projects" && <Projects id="projects" />}
-          {activeSection === "contact" && <ContactMe id="contact" />}
         </motion.div>
       </AnimatePresence>
       {/* <FloatButton.BackTop tooltip={<div>Back to top</div>} /> */}

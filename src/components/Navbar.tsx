@@ -33,10 +33,9 @@ const Navbar = ({ setActiveSection, activeSection }: NavbarProps) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const navItems: { text: string; href: string }[] = [
     { text: "Home", href: "home" },
-    { text: "About me", href: "about" },
-    { text: "Skills", href: "skills" },
     { text: "Projects", href: "projects" },
-    { text: "Contact", href: "contact" },
+    { text: "Skills", href: "skills" },
+    { text: "About me", href: "about" },
   ];
 
   const toggleDarkMode = () => {
