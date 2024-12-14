@@ -1,229 +1,90 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Props } from "../components/FullPage";
-import { faLink, faLock } from "@fortawesome/free-solid-svg-icons";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-// import ProjectTable from "../components/ProjectTable";
-import { Image } from "antd";
+import { useState } from "react";
+import { Modal, Timeline, message } from "antd";
+import { LinkOutlined } from "@ant-design/icons";
+import ProjectCard from "../components/ProjectCard";
+import { projectdemos } from "../utils/project";
 
-const Projects = ({ id }: Props) => {
-  const projects = [
-    {
-      title: "Task Management System",
-      description: "A fullstack website for team project coordination...",
-      image: "/images/task-management-tips.webp",
-      link: "https://mtm-task-management.vercel.app/login",
-      github: "https://github.com/NyanLinHtoo/Task-management-React-Nodejs-",
-      techStack: [
-        "React",
-        "Redux",
-        "Ant Design",
-        "Node.js",
-        "Express.js",
-        "Socket.io",
-        "MySQL",
-      ],
-      credentials: {
-        email: "nyanlinhtoo181199@gmail.com",
-        password: "password1234",
-      },
-    },
-    {
-      title: "QuickChat",
-      description: "QuickChat is a real-time messaging application...",
-      image: "/images/quickchat.webp",
-      link: "https://mtm-task-management.vercel.app/login",
-      github: "https://github.com/NyanLinHtoo/Real-Time-Chat-App",
-      techStack: [
-        "React",
-        "Material UI (MUI)",
-        "Emoji-mart",
-        "Sonner",
-        "Node.js",
-        "Express.js",
-        "Socket.io",
-        "MongoDB",
-        "Axios",
-      ],
-    },
-    {
-      title: "Barber Shop",
-      description:
-        "Barber Shop is a website where you can easily book a haircut by email...",
-      image: "/images/barbershop.jpg",
-      link: "https://barber-shop-six-henna.vercel.app/home",
-      github: "https://github.com/NyanLinHtoo/BarberShop",
-      techStack: [
-        "React",
-        "Tailwind CSS",
-        "TypeScript",
-        "Node.js",
-        "Express.js",
-        "Nodemailer",
-        "FontAwesome",
-      ],
-    },
-    {
-      title: "React Calculator",
-      description:
-        "Barber Shop is a website where you can easily book a haircut by email...",
-      image: "/images/barbershop.webp",
-      link: "https://mtm-task-management.vercel.app/login",
-      github: "https://github.com/NyanLinHtoo/BarberShop",
-      techStack: ["React", "TypeScript", "Tailwind Css"],
-    },
-    {
-      title: "UMS Project",
-      description:
-        "Barber Shop is a website where you can easily book a haircut by email...",
-      image: "/images/barbershop.webp",
-      link: "https://mtm-task-management.vercel.app/login",
-      github: "https://github.com/NyanLinHtoo/BarberShop",
-      techStack: [
-        "React",
-        "TypeScript",
-        "Tailwind Css",
-        "Antd",
-        "Node.js",
-        "Express.js",
-        "MongoDB",
-      ],
-    },
-    {
-      title: "Library Management",
-      description:
-        "Barber Shop is a website where you can easily book a haircut by email...",
-      image: "/images/barbershop.webp",
-      link: "https://mtm-task-management.vercel.app/login",
-      github: "https://github.com/NyanLinHtoo/BarberShop",
-      techStack: ["React", "Sonner", "MUI", "Node.js", "Express.js", "MongoDB"],
-    },
-    {
-      title: "Stopwatch",
-      description:
-        "Barber Shop is a website where you can easily book a haircut by email...",
-      image: "/images/stopwatch.jpg",
-      link: "https://stopwatch-five-gilt.vercel.app/",
-      github: "https://github.com/NyanLinHtoo/BarberShop",
-      techStack: ["React", "TypeScript", "Tailwind Css"],
-    },
-    {
-      title: "Exam System",
-      description:
-        "Barber Shop is a website where you can easily book a haircut by email...",
-      image: "/images/barbershop.webp",
-      link: "https://mtm-task-management.vercel.app/login",
-      github: "https://github.com/NyanLinHtoo/BarberShop",
-      techStack: ["Angular", "TypeScript", "Sweet Alert 2", "Lodash", "Strapi"],
-    },
-    {
-      title: "Game Hub",
-      description:
-        "Barber Shop is a website where you can easily book a haircut by email...",
-      image: "/images/Gamehub.jpg",
-      link: "https://game-hub-with-react.vercel.app/",
-      github: "https://github.com/NyanLinHtoo/BarberShop",
-      techStack: ["React", "TypeScript", "Tailwind Css", "Sonner"],
-    },
-    {
-      title: "Tic Tac Toe",
-      description:
-        "Barber Shop is a website where you can easily book a haircut by email...",
-      image: "/images/barbershop.webp",
-      link: "https://mtm-task-management.vercel.app/login",
-      github: "https://github.com/NyanLinHtoo/BarberShop",
-      techStack: [
-        "React",
-        "TypeScript",
-        "Tailwind Css",
-        "Sonner",
-        "Socket.io",
-        "Node.js",
-        "Express.js",
-      ],
-    },
-  ];
+interface Project {
+  title: string;
+  description: string;
+  image: string;
+  link?: string;
+  github: string;
+  techStack: string[];
+  credentials?: {
+    email: string;
+    password: string;
+  };
+  duration?: string;
+  category?: string;
+}
+
+const Projects = ({ id }: { id?: string }) => {
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [isCredentialsModalVisible, setIsCredentialsModalVisible] =
+    useState(false);
+
+  const handleCredentialsClick = (project: Project) => {
+    setSelectedProject(project);
+    setIsCredentialsModalVisible(true);
+  };
 
   return (
-    <div id={id} className="bg-gray-100 py-16">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12">My Projects</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
-              <Image
-                src={project.image}
-                alt={project.title}
-                preview={{
-                  toolbarRender: () => null,
-                }}
-              />
-              <div className="p-6">
-                <h3 className="text-2xl font-semibold mb-2">{project.title}</h3>
-                <p className="text-gray-600 mb-4">{project.description}</p>
-                <div className="mb-4">
-                  {project.techStack.map((tech, i) => (
-                    <span
-                      key={i}
-                      className="inline-block bg-purple-200 text-purple-800 rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                {project.credentials && (
-                  <div className="mb-4 p-3 bg-gray-100 rounded-md">
-                    <h4 className="text-lg font-semibold mb-2 flex items-center">
-                      <FontAwesomeIcon icon={faLock} className="mr-2" />
-                      Demo Credentials
-                    </h4>
-                    <p className="text-sm">
-                      <strong>Email:</strong>{" "}
-                      <span className="font-mono">
-                        {project.credentials.email}
-                      </span>
-                    </p>
-                    <p className="text-sm">
-                      <strong>Password:</strong>{" "}
-                      <span className="font-mono">
-                        {project.credentials.password}
-                      </span>
-                    </p>
-                  </div>
-                )}
-                <div className="flex justify-between items-center">
-                  {project.link && (
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-500 hover:text-blue-700 transition-colors duration-300">
-                      <FontAwesomeIcon icon={faLink} className="mr-2" shake />
-                      Demo
-                    </a>
-                  )}
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-700 hover:text-gray-900 transition-colors duration-300">
-                    <FontAwesomeIcon
-                      icon={faGithub}
-                      className="mr-2 text-lg"
-                      shake
-                    />
-                    Source Code
-                  </a>
-                </div>
+    <>
+      <div id={id} className="bg-[#f0f2f5] min-h-screen py-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-black text-gray-800 mb-4">
+              Project <span className="text-blue-600">Showcase</span>
+            </h2>
+            <p className="text-gray-500 max-w-2xl mx-auto">
+              A collection of innovative projects demonstrating my skills in web
+              development, from full-stack applications to interactive web
+              experiences.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projectdemos.map((project, index) => (
+              <div key={index} className="group">
+                <ProjectCard
+                  title={project.title}
+                  image={project.image}
+                  link={project.link}
+                  github={project.github}
+                  description={project.description}
+                  techStack={project.techStack}
+                  credentials={project.credentials}
+                  onCredentialsClick={() => handleCredentialsClick(project)}
+                />
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
-      {/* <div className="container mx-auto px-4 mt-16">
-        <ProjectTable />
-      </div> */}
-    </div>
+
+      <Modal
+        title={`${selectedProject?.title} - Credentials`}
+        open={isCredentialsModalVisible}
+        onCancel={() => setIsCredentialsModalVisible(false)}
+        footer={null}>
+        <div>
+          <div className="p-6">
+            <div className="mb-6 p-4 bg-gray-100 rounded-lg">
+              <Timeline>
+                <Timeline.Item>
+                  <strong>Email:</strong> {selectedProject?.credentials?.email}
+                </Timeline.Item>
+                <Timeline.Item>
+                  <strong>Password:</strong>{" "}
+                  {selectedProject?.credentials?.password}
+                </Timeline.Item>
+              </Timeline>
+            </div>
+          </div>
+        </div>
+      </Modal>
+    </>
   );
 };
 

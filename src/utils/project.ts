@@ -1,0 +1,136 @@
+export const projectdemos = [
+  {
+    title: "Task Management System",
+    description: "A fullstack website for team project coordination...",
+    image: "/images/task-management.jpg",
+    link: "https://mtm-task-management.vercel.app/login",
+    github: "https://github.com/NyanLinHtoo/Task-management-React-Nodejs-",
+    techStack: [
+      "React",
+      "Redux",
+      "Ant Design",
+      "Node.js",
+      "Express.js",
+      "Socket.io",
+      "MySQL",
+    ],
+    credentials: {
+      email: "nyanlinhtoo181199@gmail.com",
+      password: "password1234",
+    },
+  },
+  {
+    title: "QuickChat",
+    description: "QuickChat is a real-time messaging application...",
+    image: "/images/quickchat.webp",
+    // link: "https://mtm-task-management.vercel.app/login",
+    github: "https://github.com/NyanLinHtoo/Real-Time-Chat-App",
+    techStack: [
+      "React",
+      "Material UI (MUI)",
+      "Emoji-mart",
+      "Sonner",
+      "Node.js",
+      "Express.js",
+      "Socket.io",
+      "MongoDB",
+      "Axios",
+    ],
+  },
+  {
+    title: "Barber Shop",
+    description:
+      "Barber Shop is a website where you can easily book a haircut by email...",
+    image: "/images/barbershop.jpg",
+    link: "https://barber-shop-six-henna.vercel.app/home",
+    github: "https://github.com/NyanLinHtoo/BarberShop",
+    techStack: [
+      "React",
+      "Tailwind CSS",
+      "TypeScript",
+      "Node.js",
+      "Express.js",
+      "Nodemailer",
+      "FontAwesome",
+    ],
+  },
+  {
+    title: "React Calculator",
+    description:
+      "Barber Shop is a website where you can easily book a haircut by email...",
+    image: "/images/calculator.png",
+    // link: "https://mtm-task-management.vercel.app/login",
+    github: "https://github.com/NyanLinHtoo/React-Calculator",
+    techStack: ["React", "TypeScript", "Tailwind Css"],
+  },
+  {
+    title: "UMS Project",
+    description:
+      "Barber Shop is a website where you can easily book a haircut by email...",
+    image: "/images/UMS.jpg",
+    // link: "https://mtm-task-management.vercel.app/login",
+    github: "https://github.com/NyanLinHtoo/UMS-project",
+    techStack: [
+      "React",
+      "TypeScript",
+      "Tailwind Css",
+      "Antd",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+    ],
+  },
+  {
+    title: "Library Management",
+    description:
+      "Library Management is a system for managing books by librarians. Users can borrow a maximum of 5 books. The project is built using ReactJS, Node.js, MUI, and MongoDB.",
+    image: "/images/library.jpg",
+    // link: "https://mtm-task-management.vercel.app/login",
+    github: "https://github.com/NyanLinHtoo/Library_Mgmnt",
+    techStack: ["React", "Sonner", "MUI", "Node.js", "Express.js", "MongoDB"],
+  },
+  {
+    title: "Stopwatch",
+    description:
+      "Barber Shop is a website where you can easily book a haircut by email...",
+    image: "/images/stopwatch.jpg",
+    link: "https://stopwatch-five-gilt.vercel.app/",
+    github: "https://github.com/NyanLinHtoo/Stopwatch-with-React",
+    techStack: ["React", "TypeScript", "Tailwind Css"],
+  },
+  {
+    title: "Exam System",
+    description:
+      "Barber Shop is a website where you can easily book a haircut by email...",
+    image: "/images/barbershop.webp",
+    // link: "https://mtm-task-management.vercel.app/login",
+    github: "https://github.com/NyanLinHtoo/Exam-System",
+    techStack: ["Angular", "TypeScript", "Sweet Alert 2", "Lodash", "Strapi"],
+  },
+  {
+    title: "Game Hub",
+    description:
+      "GameHub is a video game discovery web app that helps you find new and interesting games to play. With GameHub, you can search for games by platform, genre, and more.",
+    image: "/images/Gamehub.jpg",
+    link: "https://game-hub-with-react.vercel.app/",
+    github: "https://github.com/NyanLinHtoo/Game-Hub-with-react",
+    techStack: ["React", "TypeScript", "Tailwind Css", "Sonner"],
+  },
+  {
+    title: "Tic Tac Toe",
+    description:
+      "Tic-Tac-Toe is developed using React for the frontend and Node.js with Socket.IO for real-time communication on the backend.",
+    image: "/images/tictactoe.png",
+    // link: "https://mtm-task-management.vercel.app/login",
+    github: "https://github.com/NyanLinHtoo/TicTacToe-React",
+    techStack: [
+      "React",
+      "TypeScript",
+      "Tailwind Css",
+      "Sonner",
+      "Socket.io",
+      "Node.js",
+      "Express.js",
+    ],
+  },
+];
