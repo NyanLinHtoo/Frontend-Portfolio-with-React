@@ -53,40 +53,40 @@ export const projectdemos = [
       "FontAwesome",
     ],
   },
-  {
-    title: "HR",
-    description:
-      "Barber Shop is a website where you can easily book a haircut by email...",
-    image: "/images/barbershop.jpg",
-    link: "https://barber-shop-six-henna.vercel.app/home",
-    github: "https://github.com/NyanLinHtoo/BarberShop",
-    techStack: [
-      "React",
-      "Tailwind CSS",
-      "TypeScript",
-      "Node.js",
-      "Express.js",
-      "Nodemailer",
-      "FontAwesome",
-    ],
-  },
-  {
-    title: "Lucky Draw",
-    description:
-      "Barber Shop is a website where you can easily book a haircut by email...",
-    image: "/images/barbershop.jpg",
-    link: "https://barber-shop-six-henna.vercel.app/home",
-    github: "https://github.com/NyanLinHtoo/BarberShop",
-    techStack: [
-      "React",
-      "Tailwind CSS",
-      "TypeScript",
-      "Node.js",
-      "Express.js",
-      "Nodemailer",
-      "FontAwesome",
-    ],
-  },
+  // {
+  //   title: "HR",
+  //   description:
+  //     "Barber Shop is a website where you can easily book a haircut by email...",
+  //   image: "/images/barbershop.jpg",
+  //   link: "https://barber-shop-six-henna.vercel.app/home",
+  //   github: "https://github.com/NyanLinHtoo/BarberShop",
+  //   techStack: [
+  //     "React",
+  //     "Tailwind CSS",
+  //     "TypeScript",
+  //     "Node.js",
+  //     "Express.js",
+  //     "Nodemailer",
+  //     "FontAwesome",
+  //   ],
+  // },
+  // {
+  //   title: "Lucky Draw",
+  //   description:
+  //     "Barber Shop is a website where you can easily book a haircut by email...",
+  //   image: "/images/barbershop.jpg",
+  //   link: "https://barber-shop-six-henna.vercel.app/home",
+  //   github: "https://github.com/NyanLinHtoo/BarberShop",
+  //   techStack: [
+  //     "React",
+  //     "Tailwind CSS",
+  //     "TypeScript",
+  //     "Node.js",
+  //     "Express.js",
+  //     "Nodemailer",
+  //     "FontAwesome",
+  //   ],
+  // },
   {
     title: "TalkSpace",
     description:
@@ -104,57 +104,49 @@ export const projectdemos = [
       "FontAwesome",
     ],
   },
-  {
-    title: "Book Management System",
-    description:
-      "Barber Shop is a website where you can easily book a haircut by email...",
-    image: "/images/barbershop.jpg",
-    link: "https://barber-shop-six-henna.vercel.app/home",
-    github: "https://github.com/NyanLinHtoo/BarberShop",
-    techStack: [
-      "React",
-      "Tailwind CSS",
-      "TypeScript",
-      "Node.js",
-      "Express.js",
-      "Nodemailer",
-      "FontAwesome",
-    ],
-  },
+  // {
+  //   title: "Book Management System",
+  //   description:
+  //     "Barber Shop is a website where you can easily book a haircut by email...",
+  //   image: "/images/barbershop.jpg",
+  //   link: "https://barber-shop-six-henna.vercel.app/home",
+  //   github: "https://github.com/NyanLinHtoo/BarberShop",
+  //   techStack: [
+  //     "React",
+  //     "Tailwind CSS",
+  //     "TypeScript",
+  //     "Node.js",
+  //     "Express.js",
+  //     "Nodemailer",
+  //     "FontAwesome",
+  //   ],
+  // },
   {
     title: "Sound Stream",
     description:
       "Barber Shop is a website where you can easily book a haircut by email...",
-    image: "/images/barbershop.jpg",
-    link: "https://barber-shop-six-henna.vercel.app/home",
-    github: "https://github.com/NyanLinHtoo/BarberShop",
-    techStack: [
-      "React",
-      "Tailwind CSS",
-      "TypeScript",
-      "Node.js",
-      "Express.js",
-      "Nodemailer",
-      "FontAwesome",
-    ],
+    image: "/images/soundstream.jpg",
+    // link: "https://barber-shop-six-henna.vercel.app/home",
+    github: "https://github.com/NyanLinHtoo/Sound-Stream",
+    techStack: ["React", "Tailwind CSS", "TypeScript", "andt", "FontAwesome"],
   },
-  {
-    title: "TodoList",
-    description:
-      "Barber Shop is a website where you can easily book a haircut by email...",
-    image: "/images/barbershop.jpg",
-    link: "https://barber-shop-six-henna.vercel.app/home",
-    github: "https://github.com/NyanLinHtoo/BarberShop",
-    techStack: [
-      "React",
-      "Tailwind CSS",
-      "TypeScript",
-      "Node.js",
-      "Express.js",
-      "Nodemailer",
-      "FontAwesome",
-    ],
-  },
+  // {
+  //   title: "TodoList",
+  //   description:
+  //     "Barber Shop is a website where you can easily book a haircut by email...",
+  //   image: "/images/barbershop.jpg",
+  //   link: "https://barber-shop-six-henna.vercel.app/home",
+  //   github: "https://github.com/NyanLinHtoo/BarberShop",
+  //   techStack: [
+  //     "React",
+  //     "Tailwind CSS",
+  //     "TypeScript",
+  //     "Node.js",
+  //     "Express.js",
+  //     "Nodemailer",
+  //     "FontAwesome",
+  //   ],
+  // },
   {
     title: "Tic Tac Toe",
     description:
@@ -204,14 +196,14 @@ export const projectdemos = [
       "MongoDB",
     ],
   },
-  {
-    title: "Exam System",
-    description:
-      "Barber Shop is a website where you can easily book a haircut by email...",
-    image: "/images/barbershop.webp",
-    github: "https://github.com/NyanLinHtoo/Exam-System",
-    techStack: ["Angular", "TypeScript", "Sweet Alert 2", "Lodash", "Strapi"],
-  },
+  // {
+  //   title: "Exam System",
+  //   description:
+  //     "Barber Shop is a website where you can easily book a haircut by email...",
+  //   image: "/images/barbershop.webp",
+  //   github: "https://github.com/NyanLinHtoo/Exam-System",
+  //   techStack: ["Angular", "TypeScript", "Sweet Alert 2", "Lodash", "Strapi"],
+  // },
   {
     title: "Stopwatch",
     description:
